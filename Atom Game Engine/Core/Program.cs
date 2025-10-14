@@ -1,7 +1,7 @@
-﻿using OpenTK.Windowing.Common;
+﻿using OpenTK.Graphics.OpenGL4;
+using OpenTK.Windowing.Common;
 using OpenTK.Windowing.Desktop;
-using OpenTK.Mathematics;
-using OpenTK.Graphics.ES11;
+using OpenTK.Windowing.GraphicsLibraryFramework;
 
 namespace AtomGameEngine
 {
@@ -9,37 +9,26 @@ namespace AtomGameEngine
     {
         static void Main()
         {
-            var settings = new GameWindowSettings
+            using (Game game = new Game(800, 600, "LearnOpenTK"))
             {
-                RenderFrequency = 60.0,
-                UpdateFrequency = 60.0
-            };
-
-            var native = new NativeWindowSettings
-            {
-                Size = new Vector2i(1280, 720),
-                Title = "VoxCore Engine"
-            };
-
-            using var window = new EngineWindow(settings, native);
-            window.Run();
+                game.Run();
+            }
         }
     }
 
-    class EngineWindow : GameWindow
+    public class Game : GameWindow
     {
-        public EngineWindow(GameWindowSettings gws, NativeWindowSettings nws) : base(gws, nws) { }
+        public Game(int width, int height, string title) : base(GameWindowSettings.Default, new NativeWindowSettings() { Size = (width, height), Title = title }) { }
 
         protected override void OnUpdateFrame(FrameEventArgs args)
         {
-            if (KeyboardState.IsKeyDown(OpenTK.Windowing.GraphicsLibraryFramework.Keys.Escape))
+            base.OnUpdateFrame(args);
+            //Get the state of the keyboard this frame
+            // 'KeyboardState' is a property of GameWindow
+            if (KeyboardState.IsKeyDown(Keys.Escape))
+            {
                 Close();
-        }
-
-        protected override void OnRenderFrame(FrameEventArgs args)
-        {
-            GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
-            SwapBuffers();
+            }
         }
     }
 }
