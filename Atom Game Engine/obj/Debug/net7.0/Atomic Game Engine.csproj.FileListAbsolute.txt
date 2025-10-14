@@ -1,0 +1,5 @@
+/Users/nemanjab/Projects/Atom Game Engine/Atom Game Engine/obj/Debug/net7.0/Atomic Game Engine.csproj.AssemblyReference.cache
+/Users/nemanjab/Projects/Atom Game Engine/Atom Game Engine/obj/Debug/net7.0/Atomic Game Engine.GeneratedMSBuildEditorConfig.editorconfig
+/Users/nemanjab/Projects/Atom Game Engine/Atom Game Engine/obj/Debug/net7.0/Atomic Game Engine.AssemblyInfoInputs.cache
+/Users/nemanjab/Projects/Atom Game Engine/Atom Game Engine/obj/Debug/net7.0/Atomic Game Engine.AssemblyInfo.cs
+/Users/nemanjab/Projects/Atom Game Engine/Atom Game Engine/obj/Debug/net7.0/Atomic Game Engine.csproj.CoreCompileInputs.cache

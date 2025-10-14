@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <RootNamespace>Atom_Game_Engine</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OpenTK" Version="4.9.4" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Core\" />
+    <None Remove="Graphics\" />
+    <None Remove="World\" />
+    <None Remove="ECS\" />
+    <None Remove="Network\" />
+    <None Remove="Game\" />
+    <None Remove="Assets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\" />
+    <Folder Include="Graphics\" />
+    <Folder Include="World\" />
+    <Folder Include="ECS\" />
+    <Folder Include="Network\" />
+    <Folder Include="Game\" />
+    <Folder Include="Assets\" />
+  </ItemGroup>
+</Project>
