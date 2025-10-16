@@ -13,20 +13,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Core\" />
-    <None Remove="Graphics\" />
-    <None Remove="World\" />
-    <None Remove="ECS\" />
-    <None Remove="Network\" />
-    <None Remove="Game\" />
     <None Remove="Assets\" />
+    <None Remove="Graphics\" />
+    <None Remove="Graphics\Shaders\" />
+    <None Remove="Figures\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\" />
-    <Folder Include="Graphics\" />
-    <Folder Include="World\" />
-    <Folder Include="ECS\" />
-    <Folder Include="Network\" />
-    <Folder Include="Game\" />
     <Folder Include="Assets\" />
+    <Folder Include="Graphics\" />
+    <Folder Include="Graphics\Shaders\" />
+    <Folder Include="Figures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Graphics\Shaders\shader.frag">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Shaders\shader.vert">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

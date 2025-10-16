@@ -28,3 +28,5 @@
 /Users/nemanjab/Projects/Atom Game Engine/Atom Game Engine/obj/Debug/net7.0/Atomic Game Engine.pdb
 /Users/nemanjab/Projects/Atom Game Engine/Atom Game Engine/obj/Debug/net7.0/Atomic Game Engine.genruntimeconfig.cache
 /Users/nemanjab/Projects/Atom Game Engine/Atom Game Engine/obj/Debug/net7.0/ref/Atomic Game Engine.dll
+/Users/nemanjab/Projects/Atom Game Engine/Atom Game Engine/bin/Debug/net7.0/Graphics/Shaders/shader.frag
+/Users/nemanjab/Projects/Atom Game Engine/Atom Game Engine/bin/Debug/net7.0/Graphics/Shaders/shader.vert
