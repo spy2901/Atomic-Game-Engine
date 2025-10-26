@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3COFIjqDG3wUINsw+6jS+iCqAA3fG+AFOmtttwDa+auQBinRHGCKvkA3QxStG8cxyhhEoQo8CK+64lcb0hWhAw==",
+  "dgSpecHash": "PaHXRiKf05S//oqZGFnCIpggNw1jpp0UYIUqW+6/tukOU5Inok6yJQ5m2yj/SXqF8UrWwCzV8QRnSaqkxduepA==",
   "success": true,
   "projectFilePath": "/Users/nemanjab/Projects/Atom Game Engine/Atom Game Engine/Atomic Game Engine.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "/Users/nemanjab/.nuget/packages/opentk.windowing.common/4.9.4/opentk.windowing.common.4.9.4.nupkg.sha512",
     "/Users/nemanjab/.nuget/packages/opentk.windowing.desktop/4.9.4/opentk.windowing.desktop.4.9.4.nupkg.sha512",
     "/Users/nemanjab/.nuget/packages/opentk.windowing.graphicslibraryframework/4.9.4/opentk.windowing.graphicslibraryframework.4.9.4.nupkg.sha512",
+    "/Users/nemanjab/.nuget/packages/stbimagesharp/2.30.15/stbimagesharp.2.30.15.nupkg.sha512",
     "/Users/nemanjab/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []

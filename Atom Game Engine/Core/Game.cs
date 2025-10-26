@@ -14,6 +14,7 @@ namespace Atom_Game_Engine
 
         private Shader _shader;
 
+        [Obsolete]
         public Game(int width, int height, string title)
             : base(GameWindowSettings.Default,
                    new NativeWindowSettings() { Size = new Vector2i(width, height), Title = title })
@@ -24,7 +25,7 @@ namespace Atom_Game_Engine
             base.OnLoad();
 
             // Set clear color
-            GL.ClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+            GL.ClearColor(0.0f, 0.0f, 0.0f, 1.0f);
             
             // Create shader
             _shader = new Shader("./Graphics/Shaders/shader.vert", "./Graphics/Shaders/shader.frag");
@@ -38,7 +39,6 @@ namespace Atom_Game_Engine
 
             GL.Clear(ClearBufferMask.ColorBufferBit);
 
-            GL.Clear(ClearBufferMask.ColorBufferBit);
             _square.Render(_shader);
             SwapBuffers();
         }
@@ -46,6 +46,7 @@ namespace Atom_Game_Engine
         protected override void OnUpdateFrame(FrameEventArgs args)
         {
             base.OnUpdateFrame(args);
+
             // Get the state of the keyboard this frame
             // 'KeyboardState' is a property of GameWindow
             // TODO: Obrisati Drugi uslov za gasenje u trenutku kad krene izrada kontorli za karaktera

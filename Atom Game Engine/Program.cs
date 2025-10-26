@@ -6,7 +6,7 @@ namespace AtomGameEngine
     {
         static void Main()
         {
-            using (Game game = new Game(1920, 1080, "Atom Game Engine"))
+            using (Game game = new Game(1920, 1080, "Atomic Game Engine"))
             {
                 game.Run();
                 

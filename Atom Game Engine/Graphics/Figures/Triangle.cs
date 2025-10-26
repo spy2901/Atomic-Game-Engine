@@ -5,23 +5,23 @@ namespace Atom_Game_Engine.Graphics
 
     public class Triangle : IDisposable
     {
-        private readonly float[] _vertices =
+        float[] _vertices =
         {
-             0.5f,  0.5f, 0.0f,  // top right
-             0.5f, -0.5f, 0.0f,  // bottom right
-            -0.5f, -0.5f, 0.0f,  // bottom left
-            -0.5f,  0.5f, 0.0f   // top left
+            // pozicija       // texture coords
+             0.5f,  0.5f, 0.0f, 1.0f, 1.0f,  // gore desno
+             0.5f, -0.5f, 0.0f, 1.0f, 0.0f,  // dole desno
+            -0.5f, -0.5f, 0.0f, 0.0f, 0.0f,  // dole levo
+            -0.5f,  0.5f, 0.0f, 0.0f, 1.0f   // gore levo
         };
-
-        private readonly uint[] _indices =
-        {
-            0, 1, 3,   // first triangle
-            1, 2, 3    // second triangle
-        };
+        /*float[] _vertices = {
+            //  pozicija (x, y, z)   // boja (r, g, b)
+             0.5f, -0.5f, 0.0f,      1.0f, 0.0f, 0.0f,  // desno dole – crvena
+            -0.5f, -0.5f, 0.0f,      0.0f, 1.0f, 0.0f,  // levo dole – zelena
+             0.0f,  0.5f, 0.0f,      0.0f, 0.0f, 1.0f   // gore – plava
+        };*/
 
         private int _vbo;
         private int _vao;
-        private int _ebo;
 
         public Triangle()
         {
@@ -35,8 +35,15 @@ namespace Atom_Game_Engine.Graphics
             GL.BufferData(BufferTarget.ArrayBuffer, _vertices.Length * sizeof(float), _vertices, BufferUsageHint.StaticDraw);
 
             // 3️⃣ Poveži atribute
-            GL.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, 3 * sizeof(float), 0);
+            // Pozicija (atribut 0)
+            GL.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, 5 * sizeof(float), 0);
             GL.EnableVertexAttribArray(0);
+
+            // Texture koordinate (atribut 2)
+            GL.VertexAttribPointer(1, 2, VertexAttribPointerType.Float, false, 5 * sizeof(float), 3 * sizeof(float));
+            GL.EnableVertexAttribArray(1);
+
+
 
             // 4️⃣ Odveži sve
             GL.BindBuffer(BufferTarget.ArrayBuffer, 0);

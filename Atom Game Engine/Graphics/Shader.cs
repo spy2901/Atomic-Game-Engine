@@ -10,8 +10,7 @@ namespace Atom_Game_Engine.Graphics
         public Shader(string vertexPath, string fragmentPath)
         {
 
-
-             string vertexShaderSource = File.ReadAllText(vertexPath);
+            string vertexShaderSource = File.ReadAllText(vertexPath);
             string fragmentShaderSource = File.ReadAllText(fragmentPath);
 
             int vertexShader = GL.CreateShader(ShaderType.VertexShader);
@@ -88,6 +87,13 @@ namespace Atom_Game_Engine.Graphics
             Dispose(true);
             GC.SuppressFinalize(this);
         }
+
+        public void SetInt(string name, int value)
+        {
+            int location = GL.GetUniformLocation(Handle, name);
+            GL.Uniform1(location, value);
+        }
+
     }
 }
 
