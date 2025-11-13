@@ -2,6 +2,7 @@
 using Atom_Game_Engine.Core;
 using Atom_Game_Engine.Graphics;
 using Atom_Game_Engine.Graphics.Figures;
+using Atom_Game_Engine.Graphics.Voxel;
 using OpenTK.Graphics.OpenGL4;
 using OpenTK.Mathematics;
 using OpenTK.Windowing.Common;
@@ -13,7 +14,10 @@ namespace Atom_Game_Engine
     public class Game : GameWindow
     {
         //private Square _square;
-        private Cube _cube;
+        //private Cube _cube;
+
+        private Chunk _chunk;
+        private ChunkMesh _chunkMesh;
 
         private Shader _shader;
 
@@ -25,6 +29,8 @@ namespace Atom_Game_Engine
         private Camera _camera;
         private Vector2 _lastMousePos;
         private bool _firstMove = true;
+
+        Texture _atlas;
 
 
 
@@ -40,15 +46,22 @@ namespace Atom_Game_Engine
         {
             base.OnLoad();
             _camera = new Camera(new Vector3(0f, 0f, 3f));
-            CursorState = CursorState.Grabbed;
+            _atlas = new Texture("./Assets/atlas.png");
+            //CursorState = CursorState.Grabbed;
 
             // Set clear color
             GL.ClearColor(0.431f, 0.698f, 1.0f, 1.0f);
 
+
             // Create shader
             _shader = new Shader("./Graphics/Shaders/shader.vert", "./Graphics/Shaders/shader.frag");
+            _shader.SetInt("textureAtlas", 0);
             //_square = new Square();
-            _cube = new Cube();
+            _chunk = new Chunk(new Vector3i(0, 0, 0));
+            _chunkMesh = new ChunkMesh(_shader, _atlas, _chunk);
+
+            var chunk = new Chunk(new Vector3i(0, 0, 0));
+            Console.WriteLine("chunk generated: " + chunk.GetAll().Count() + " voxels");
 
             _position = new Vector3(0.0f, 0.0f, 0.0f);
             _scale = new Vector3(1.0f, 1.0f, 1.0f);
@@ -62,26 +75,18 @@ namespace Atom_Game_Engine
 
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 
-            // Aktiviraj shader
             _shader.Use();
 
-            // 🔹 Model (rotacija, skaliranje, translacija)
-            Matrix4 model =
-                Matrix4.CreateScale(_scale) *
-                Matrix4.CreateRotationY(MathHelper.DegreesToRadians(_rotation)) *
-                Matrix4.CreateTranslation(_position);
-
-            // 🔹 View i Projection iz kamere
-            Matrix4 view = _camera.GetViewMatrix();
-            Matrix4 projection = _camera.GetProjectionMatrix(Size.X / (float)Size.Y);
-
-            // 🔹 Pošalji u shader
+            _shader.SetMatrix4("view", _camera.GetViewMatrix());
+            _shader.SetMatrix4("projection", Matrix4.CreatePerspectiveFieldOfView(
+                MathHelper.DegreesToRadians(_camera.Fov),
+                Size.X / (float)Size.Y,
+                0.1f,
+                100.0f));
+            Matrix4 model = Matrix4.Identity;
             _shader.SetMatrix4("model", model);
-            _shader.SetMatrix4("view", view);
-            _shader.SetMatrix4("projection", projection);
 
-            // 🔹 Renderuj kocku
-            _cube.Render(_shader);
+            _chunkMesh.Render();
 
             SwapBuffers();
         }
@@ -143,9 +148,7 @@ namespace Atom_Game_Engine
 
         protected override void OnUnload()
         {
-            _cube.Dispose();
             _shader.Dispose();
-
             base.OnUnload();
 
         }

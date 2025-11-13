@@ -33,3 +33,4 @@
 /Users/nemanjab/Projects/Atom Game Engine/Atom Game Engine/bin/Debug/net7.0/Assets/container.jpg
 /Users/nemanjab/Projects/Atom Game Engine/Atom Game Engine/bin/Debug/net7.0/Graphics/Shaders/shader.frag
 /Users/nemanjab/Projects/Atom Game Engine/Atom Game Engine/bin/Debug/net7.0/Graphics/Shaders/shader.vert
+/Users/nemanjab/Projects/Atom Game Engine/Atom Game Engine/bin/Debug/net7.0/Assets/atlas.png

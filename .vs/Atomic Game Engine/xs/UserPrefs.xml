@@ -1,24 +1,29 @@
-﻿<Properties StartupConfiguration="{029C8279-28FE-4242-AB58-8B6EB3CDA218}|Default" GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Atom Game Engine/Graphics/Shaders/shader.vert">
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{029C8279-28FE-4242-AB58-8B6EB3CDA218}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Atom Game Engine/Core/Game.cs">
     <Files>
-      <File FileName="Atom Game Engine/Core/Game.cs" />
-      <File FileName="Atom Game Engine/Graphics/Figures/Square.cs" Line="29" Column="40" />
-      <File FileName="Atom Game Engine/Graphics/Shaders/shader.frag" Line="3" Column="1" />
-      <File FileName="Atom Game Engine/Graphics/Shader.cs" />
-      <File FileName="Atom Game Engine/Graphics/Shaders/shader.vert" Line="17" Column="2" />
-      <File FileName=".gitignore" />
+      <File FileName="Atom Game Engine/Core/Game.cs" Line="55" Column="89" />
+      <File FileName="Atom Game Engine/Graphics/Shaders/shader.frag" Line="1" Column="1" />
+      <File FileName="Atom Game Engine/Graphics/Shaders/shader.vert" Line="1" Column="1" />
+      <File FileName="Atom Game Engine/Graphics/Figures/Cube.cs" Line="77" Column="59" />
+      <File FileName="Atom Game Engine/Graphics/Figures/Square.cs" Line="50" Column="60" />
+      <File FileName="Atom Game Engine/Core/Camera.cs" Line="79" Column="9" />
+      <File FileName="Atom Game Engine/Graphics/Voxel/Voxel.cs" Line="17" Column="34" />
+      <File FileName="Atom Game Engine/Graphics/Voxel/Chunk.cs" Line="44" Column="29" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Atomic Game Engine">
             <Node name="Atomic Game Engine">
-              <Node name="Core" expanded="True" />
+              <Node name="Assets" expanded="True" />
+              <Node name="Core">
+                <Node name="Game.cs" selected="True" />
+              </Node>
               <Node name="Graphics" expanded="True">
                 <Node name="Figures" expanded="True" />
-                <Node name="Shaders" expanded="True">
-                  <Node name="shader.vert" selected="True" />
-                </Node>
+                <Node name="Shaders" expanded="True" />
+                <Node name="Voxel" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -26,11 +31,10 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Atomic_220Game_220Engine PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Atomic_220Game_220Engine PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
 </Properties>

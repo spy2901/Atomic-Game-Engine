@@ -19,6 +19,21 @@ namespace Atom_Game_Engine.Core
         public float Sensitivity { get; set; } = 0.1f;
         public float Zoom { get; set; } = 45f;
 
+        private float _fov = 45f;
+        public float Fov
+        {
+            get => _fov;
+            set
+            {
+                if (value < 1.0f)
+                    _fov = 1.0f;
+                else if (value > 90.0f)
+                    _fov = 90.0f;
+                else
+                    _fov = value;
+            }
+        }
+
         public Camera(Vector3 position)
         {
             Position = position;
