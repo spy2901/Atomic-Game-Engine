@@ -18,6 +18,8 @@
     <None Remove="Graphics\" />
     <None Remove="Graphics\Shaders\" />
     <None Remove="Graphics\Figures\" />
+    <None Remove="Graphics\Shaders\shader.vert" />
+    <None Remove="Graphics\Shaders\shader.frag" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\" />
@@ -27,17 +29,19 @@
     <Folder Include="Graphics\Figures\" />
   </ItemGroup>
   <ItemGroup>
-    <None Update="Graphics\Shaders\shader.frag">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Graphics\Shaders\shader.vert">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="Assets\wall.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Assets\container.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Graphics\Shaders\shader.frag">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graphics\Shaders\shader.vert">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

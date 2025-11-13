@@ -1,5 +1,6 @@
 ﻿using System;
 using OpenTK.Graphics.OpenGL4;
+using OpenTK.Mathematics;
 
 namespace Atom_Game_Engine.Graphics
 {
@@ -93,7 +94,11 @@ namespace Atom_Game_Engine.Graphics
             int location = GL.GetUniformLocation(Handle, name);
             GL.Uniform1(location, value);
         }
-
+        public void SetMatrix4(string name, Matrix4 matrix)
+        {
+            int location = GL.GetUniformLocation(Handle, name);
+            GL.UniformMatrix4(location, false, ref matrix);
+        }
     }
 }
 

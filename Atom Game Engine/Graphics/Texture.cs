@@ -39,6 +39,10 @@ namespace Atom_Game_Engine.Graphics
             GL.ActiveTexture(unit);
             GL.BindTexture(TextureTarget.Texture2D, Handle);
         }
+        public void Dispose()
+        {
+            GL.DeleteTexture(Handle);
+        }
     }
 }
 

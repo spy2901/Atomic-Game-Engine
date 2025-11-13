@@ -1,27 +1,23 @@
-﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{029C8279-28FE-4242-AB58-8B6EB3CDA218}|Default">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Atomic_220Game_220Engine PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Atom Game Engine/Graphics/Shaders/shader.frag">
+﻿<Properties StartupConfiguration="{029C8279-28FE-4242-AB58-8B6EB3CDA218}|Default" GitUserInfo="UsingGIT">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Atom Game Engine/Graphics/Shaders/shader.vert">
     <Files>
-      <File FileName="Atom Game Engine/Core/Game.cs" Line="41" Column="1" />
-      <File FileName="Atom Game Engine/Graphics/Figures/Square.cs" Line="62" Column="1" />
-      <File FileName="Atom Game Engine/Graphics/Texture.cs" Line="21" Column="1" />
-      <File FileName="Atom Game Engine/Graphics/Shaders/shader.frag" Line="10" Column="2" />
-      <File FileName="Atom Game Engine/Graphics/Shader.cs" Line="96" Column="1" />
-      <File FileName="Atom Game Engine/Graphics/Shaders/shader.vert" Line="12" Column="1" />
+      <File FileName="Atom Game Engine/Core/Game.cs" />
+      <File FileName="Atom Game Engine/Graphics/Figures/Square.cs" Line="29" Column="40" />
+      <File FileName="Atom Game Engine/Graphics/Shaders/shader.frag" Line="3" Column="1" />
+      <File FileName="Atom Game Engine/Graphics/Shader.cs" />
+      <File FileName="Atom Game Engine/Graphics/Shaders/shader.vert" Line="17" Column="2" />
+      <File FileName=".gitignore" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Atomic Game Engine">
             <Node name="Atomic Game Engine">
-              <Node name="Assets" expanded="True" />
               <Node name="Core" expanded="True" />
-              <Node name="Graphics">
+              <Node name="Graphics" expanded="True">
                 <Node name="Figures" expanded="True" />
                 <Node name="Shaders" expanded="True">
-                  <Node name="shader.frag" selected="True" />
+                  <Node name="shader.vert" selected="True" />
                 </Node>
               </Node>
             </Node>
@@ -30,6 +26,11 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Atomic_220Game_220Engine PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>
