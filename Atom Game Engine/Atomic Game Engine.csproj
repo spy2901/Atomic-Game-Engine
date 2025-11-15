@@ -21,6 +21,7 @@
     <None Remove="Graphics\Shaders\shader.vert" />
     <None Remove="Graphics\Shaders\shader.frag" />
     <None Remove="Graphics\Voxel\" />
+    <None Remove="Core\World\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\" />
@@ -29,6 +30,7 @@
     <Folder Include="Graphics\Shaders\" />
     <Folder Include="Graphics\Figures\" />
     <Folder Include="Graphics\Voxel\" />
+    <Folder Include="Core\World\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="Assets\wall.jpg">

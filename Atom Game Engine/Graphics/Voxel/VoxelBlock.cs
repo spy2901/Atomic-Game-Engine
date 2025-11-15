@@ -29,6 +29,8 @@ namespace Atom_Game_Engine.Graphics.Voxel
     }
     public static class BlockTypes
     {
+        public static readonly VoxelBlock Air =
+            new VoxelBlock(new Vector2i(-1, -1));
         public static readonly VoxelBlock Dirt =
             new VoxelBlock(new Vector2i(2, 15));   // sve strane isti tile
 
@@ -37,6 +39,32 @@ namespace Atom_Game_Engine.Graphics.Voxel
                 new Vector2i(7, 13),   // top
                 new Vector2i(2, 15),   // bottom (dirt)
                 new Vector2i(3, 15));  // sides
+
+        public static readonly VoxelBlock Stone =
+            new VoxelBlock(new Vector2i(1, 15));
+
+        public static readonly VoxelBlock Sand =
+            new VoxelBlock(new Vector2i(2, 14));
+
+        public static readonly VoxelBlock OakLog =
+            new VoxelBlock(
+                new Vector2i(5, 15), // top/bottomb v                            
+                new Vector2i(4, 14),
+                new Vector2i(4, 14)  // sides
+            );
+
+        public static readonly VoxelBlock OakPlanks =
+            new VoxelBlock(new Vector2i(4, 15));
+
+        public static readonly VoxelBlock Leaves =
+            new VoxelBlock(new Vector2i(4, 3));
+
+        public static readonly VoxelBlock Water =
+            new VoxelBlock(new Vector2i(14, 1));
+
+        public static readonly VoxelBlock Bedrock =
+            new VoxelBlock(new Vector2i(1, 14));
     }
 }
+
 

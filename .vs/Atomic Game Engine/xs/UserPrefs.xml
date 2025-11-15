@@ -1,28 +1,29 @@
-﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{029C8279-28FE-4242-AB58-8B6EB3CDA218}|Default">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Atom Game Engine/Core/Game.cs">
+﻿<Properties StartupConfiguration="{029C8279-28FE-4242-AB58-8B6EB3CDA218}|Default" GitUserInfo="UsingGIT">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Atom Game Engine/Core/Camera.cs">
     <Files>
-      <File FileName="Atom Game Engine/Core/Game.cs" Line="55" Column="89" />
-      <File FileName="Atom Game Engine/Graphics/Shaders/shader.frag" Line="1" Column="1" />
-      <File FileName="Atom Game Engine/Graphics/Shaders/shader.vert" Line="1" Column="1" />
-      <File FileName="Atom Game Engine/Graphics/Figures/Cube.cs" Line="77" Column="59" />
-      <File FileName="Atom Game Engine/Graphics/Figures/Square.cs" Line="50" Column="60" />
-      <File FileName="Atom Game Engine/Core/Camera.cs" Line="79" Column="9" />
-      <File FileName="Atom Game Engine/Graphics/Voxel/Voxel.cs" Line="17" Column="34" />
-      <File FileName="Atom Game Engine/Graphics/Voxel/Chunk.cs" Line="44" Column="29" />
+      <File FileName="Atom Game Engine/Core/Game.cs" Line="9" Column="32" />
+      <File FileName="Atom Game Engine/Graphics/Voxel/VoxelBlock.cs" />
+      <File FileName="Atom Game Engine/Core/World/Noise.cs" Line="11" Column="33" />
+      <File FileName="Atom Game Engine/Graphics/Voxel/ChunkMesh.cs" Line="55" Column="10" />
+      <File FileName="Atom Game Engine/Core/World/ChunkManager.cs" Line="25" Column="10" />
+      <File FileName="Atom Game Engine/Core/World/Perlin.cs" Line="61" Column="1" />
+      <File FileName="Atom Game Engine/Core/World/Chunk.cs" Line="86" Column="1" />
+      <File FileName="Atom Game Engine/Core/World/SimpleNoise.cs" Line="10" Column="10" />
+      <File FileName="Atom Game Engine/Core/Camera.cs" Line="18" Column="45" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Atomic Game Engine">
             <Node name="Atomic Game Engine">
-              <Node name="Assets" expanded="True" />
               <Node name="Core">
-                <Node name="Game.cs" selected="True" />
+                <Node name="World" expanded="True" />
+                <Node name="Camera.cs" selected="True" />
               </Node>
               <Node name="Graphics" expanded="True">
-                <Node name="Figures" expanded="True" />
-                <Node name="Shaders" expanded="True" />
                 <Node name="Voxel" expanded="True" />
               </Node>
             </Node>
@@ -31,10 +32,8 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.Atomic_220Game_220Engine PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
 </Properties>

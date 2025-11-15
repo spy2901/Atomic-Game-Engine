@@ -15,7 +15,7 @@ namespace Atom_Game_Engine.Core
 
         public float Yaw { get; set; } = -90f;
         public float Pitch { get; set; } = 0f;
-        public float Speed { get; set; } = 2.5f;
+        public float Speed { get; set; } = 12.5f;
         public float Sensitivity { get; set; } = 0.1f;
         public float Zoom { get; set; } = 45f;
 

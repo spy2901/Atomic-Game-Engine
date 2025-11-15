@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using Atom_Game_Engine.Core;
+using Atom_Game_Engine.Core.World;
 using Atom_Game_Engine.Graphics;
-using Atom_Game_Engine.Graphics.Figures;
 using Atom_Game_Engine.Graphics.Voxel;
 using OpenTK.Graphics.OpenGL4;
 using OpenTK.Mathematics;
@@ -13,15 +13,12 @@ namespace Atom_Game_Engine
 {
     public class Game : GameWindow
     {
-        //private Square _square;
-        //private Cube _cube;
-
-        private Chunk _chunk;
-        private ChunkMesh _chunkMesh;
+        //private Chunk _chunk;
+        //private ChunkMesh _chunkMesh;
 
         private Shader _shader;
 
-        private Matrix4 _modelMatrix;
+        //private Matrix4 _modelMatrix;
         private float _rotation;
         private Vector3 _position;
         private Vector3 _scale;
@@ -30,9 +27,8 @@ namespace Atom_Game_Engine
         private Vector2 _lastMousePos;
         private bool _firstMove = true;
 
+        private ChunkManager _chunkManager;
         Texture _atlas;
-
-
 
         [Obsolete]
         public Game(int width, int height, string title)
@@ -47,7 +43,7 @@ namespace Atom_Game_Engine
             base.OnLoad();
             _camera = new Camera(new Vector3(0f, 0f, 3f));
             _atlas = new Texture("./Assets/atlas.png");
-            //CursorState = CursorState.Grabbed;
+            CursorState = CursorState.Grabbed;
 
             // Set clear color
             GL.ClearColor(0.431f, 0.698f, 1.0f, 1.0f);
@@ -56,12 +52,14 @@ namespace Atom_Game_Engine
             // Create shader
             _shader = new Shader("./Graphics/Shaders/shader.vert", "./Graphics/Shaders/shader.frag");
             _shader.SetInt("textureAtlas", 0);
-            //_square = new Square();
-            _chunk = new Chunk(new Vector3i(0, 0, 0));
-            _chunkMesh = new ChunkMesh(_shader, _atlas, _chunk);
+            //_chunk = new Chunk(0,0);
+            //_chunkMesh = new ChunkMesh(_shader, _atlas, _chunk);
 
-            var chunk = new Chunk(new Vector3i(0, 0, 0));
-            Console.WriteLine("chunk generated: " + chunk.GetAll().Count() + " voxels");
+            // Napravi chunk manager za 5x5 grid (radius=2)
+            _chunkManager = new ChunkManager(Chunk.CHUNK_SIZE, 5, _shader, _atlas);
+
+            // inicijalno update sa pozicijom kamere
+            _chunkManager.Update(_camera.Position);
 
             _position = new Vector3(0.0f, 0.0f, 0.0f);
             _scale = new Vector3(1.0f, 1.0f, 1.0f);
@@ -86,7 +84,8 @@ namespace Atom_Game_Engine
             Matrix4 model = Matrix4.Identity;
             _shader.SetMatrix4("model", model);
 
-            _chunkMesh.Render();
+            _chunkManager.RenderAll();
+            //_chunkMesh.Render();
 
             SwapBuffers();
         }
@@ -99,16 +98,23 @@ namespace Atom_Game_Engine
                 return;
 
             var input = KeyboardState;
+            if (input.IsKeyDown(Keys.Escape) == true)
+            {
+                Close();
+            }
             _camera.ProcessKeyboard(input, (float)args.Time);
 
-            // 🔹 Rotacija
-            _rotation += 25.0f * (float)args.Time; // stepeni u sekundi
+            // Update chunk manager sa trenutnom kamerom (world pozicija)
+            _chunkManager.Update(_camera.Position);
 
-            // 🔹 Kreiranje model matrice
-            _modelMatrix =
-                Matrix4.CreateScale(_scale) *
-                Matrix4.CreateRotationZ(MathHelper.DegreesToRadians(_rotation)) *
-                Matrix4.CreateTranslation(_position);
+            //// 🔹 Rotacija
+            //_rotation += 25.0f * (float)args.Time; // stepeni u sekundi
+
+            //// 🔹 Kreiranje model matrice
+            //_modelMatrix =
+            //    Matrix4.CreateScale(_scale) *
+            //    Matrix4.CreateRotationZ(MathHelper.DegreesToRadians(_rotation)) *
+            //    Matrix4.CreateTranslation(_position);
         }
 
         protected override void OnMouseMove(MouseMoveEventArgs e)
@@ -148,6 +154,8 @@ namespace Atom_Game_Engine
 
         protected override void OnUnload()
         {
+            _chunkManager?.Dispose();
+            _atlas?.Dispose();
             _shader.Dispose();
             base.OnUnload();
 
